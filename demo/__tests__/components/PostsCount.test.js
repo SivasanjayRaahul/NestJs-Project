@@ -3,6 +3,7 @@
 import { render } from "@testing-library/react";
 
 import PostsCount from "../../components/PostsCount";
+
 import { mockedPosts } from "../posts/index.test";
 
 describe("render to display no of posts", () => {
