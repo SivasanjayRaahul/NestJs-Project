@@ -4,7 +4,6 @@ import React from "react";
 import PostsCount from "@/components/PostsCount";
 import DisplayPosts from "@/components/DisplayPosts";
 import { useSession } from "next-auth/react";
-import { useEffect } from "react";
 import { signIn } from "next-auth/react";
 
 export default function ViewList({ posts }) {
