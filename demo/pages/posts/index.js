@@ -24,7 +24,7 @@ export default function ViewList({ posts }) {
   return (
     <>
       <h1>Posts</h1>
-      <PostsCount posts={posts}></PostsCount>
+      <PostsCount postCount={posts.length}></PostsCount>
       <DisplayPosts posts={posts}></DisplayPosts>
     </>
   );

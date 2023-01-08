@@ -8,7 +8,7 @@ import { mockedPosts } from "../posts/index.test";
 
 describe("render to display no of posts", () => {
   it("display no of posts", () => {
-    const { getByText } = render(<PostsCount posts={mockedPosts}></PostsCount>);
+    const { getByText } = render(<PostsCount posts={mockedPosts.length}></PostsCount>);
 
     expect(getByText("Total posts: 2")).toBeInTheDocument();
   });
