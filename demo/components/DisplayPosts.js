@@ -5,7 +5,8 @@ import React from "react";
 export default function DisplayPosts({ posts }) {
   return (
     <>
-        <table>
+      <table>
+        <tbody>
           <tr>
             <th>UserId</th>
             <th>Title</th>
@@ -13,14 +14,15 @@ export default function DisplayPosts({ posts }) {
           </tr>
           {posts.map((post) => {
             return (
-              <tr>
+              <tr id={post.id}>
                 <td>{post.userId}</td>
                 <td>{post.title}</td>
                 <td>{post.body}</td>
               </tr>
             );
           })}
-        </table>
+        </tbody>
+      </table>
     </>
   );
 }
