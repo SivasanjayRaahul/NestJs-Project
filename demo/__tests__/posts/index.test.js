@@ -19,7 +19,7 @@ export const mockedPosts = [
 ];
 
 describe("render view posts page", () => {
-  it("display posts at top", () => {
+  it("display posts label at top", () => {
     const { getByText } = render(<Posts posts={mockedPosts} />);
 
     expect(getByText("Posts")).toBeInTheDocument();
