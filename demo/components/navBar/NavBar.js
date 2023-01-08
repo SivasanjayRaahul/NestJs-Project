@@ -34,7 +34,7 @@ function Navbar({ session }) {
                 href="/api/auth/signout"
                 onClick={(e) => {
                   e.preventDefault();
-                  signOut();
+                  signOut({ callbackUrl: "localhost:3000" });
                 }}
               >
                 Sign Out
