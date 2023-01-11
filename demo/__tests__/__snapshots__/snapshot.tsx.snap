@@ -7,32 +7,19 @@ exports[`renders homepage unchanged 1`] = `
   >
     POSTS
   </h1>
-  <button
+  <a
     class="createButton"
+    href="/posts/create"
+    role="button"
   >
-    <a
-      href="/posts/create"
-    >
-      Create
-    </a>
-  </button>
-  <button
+    Create
+  </a>
+  <a
     class="viewButton"
+    href="/posts"
+    role="button"
   >
-    <a
-      href="/posts"
-    >
-      View
-    </a>
-  </button>
-  <button
-    class="updateButton"
-  >
-    <a
-      href="/posts"
-    >
-      Update
-    </a>
-  </button>
+    View
+  </a>
 </div>
 `;
