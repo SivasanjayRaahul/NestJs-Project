@@ -1,6 +1,6 @@
 /** @format */
 
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "@/pages/index";
 
 describe("Home", () => {
@@ -30,11 +30,31 @@ describe("Home", () => {
     expect(viewButton).toBeTruthy();
   });
 
-  it("renders update post button", () => {
+  it("navigates to view post page", async () => {
     render(<Home />);
 
-    const updateButton = screen.getByText("Update");
+    const viewButton = screen.getByRole("button", { name: "View" });
 
-    expect(updateButton).toBeTruthy();
+    fireEvent.click(viewButton);
+
+    const signInWithGithubButton = waitFor(() =>
+      screen.getByRole("button", {
+        name: /sign in with github/,
+      })
+    );
+
+    expect(signInWithGithubButton).toBeInTheDocument;
+  });
+
+  it("navigates to create post page", async () => {
+    render(<Home />);
+
+    const createButton = screen.getByRole("button", { name: "Create" });
+
+    fireEvent.click(createButton);
+
+    const notLoggedInText = waitFor(() => screen.getByText(/not logged in/));
+
+    expect(notLoggedInText).toBeInTheDocument;
   });
 });
